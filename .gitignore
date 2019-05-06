@@ -15,3 +15,7 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+#コミットしたくないファイルを指定する
+#今回は投稿される画像ファイルを指定
+public/uploads/*
