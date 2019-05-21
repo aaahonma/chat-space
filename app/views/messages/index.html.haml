@@ -1,0 +1,39 @@
+.wrapper
+  .flash-box
+    .notice グループを編集しました
+  = render 'side_bar'
+  .chat
+    .header
+      .current-group
+        %h2.current-group__name
+          グループ名
+        %ul.current-group__members
+          Member :
+          %li.member
+            メンバー1
+          %li.member
+            メンバー2
+          %li.member
+            メンバー3
+      .edit
+        .edit__button
+          = link_to('Edit', "/groups/group.id/edit")
+    .messages
+      - num = 1
+      - while num < 5
+        .message
+          .upper-info
+            %p.upper-info__user-name メンバー#{num}
+            %h3.upper-info__data YYYY/MM/DD(aaa)
+          .message-text こんにちは#{num}
+          - num += 1
+    .form
+      %form.new-message(accept-charset="UTF-8" action="/groups/group.id/messages" enctype="multipart/form-data" method=  "post")
+        %input.hidden-data(name="utf8" type="hidden" value="")
+        .input-box
+          %input.font-awesome(type="text" placeholder="type a message")
+          %label.image-label(for="upload-icon")
+            %i.fa.fa-image
+            %input.image-label__input(name="message[image]" id="upload-icon" type="file")
+        %input.submit-btn(type="submit" value="Send")
+
