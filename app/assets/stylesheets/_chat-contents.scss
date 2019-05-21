@@ -1,0 +1,129 @@
+@import "./variable";
+
+div {
+    box-sizing: border-box;
+}
+
+.chat {
+    width: calc(100% - 300px);
+    height: 100vh;
+    float: left;
+    .header {
+        padding: 0px 40px;
+        height: 100px;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: solid 1px #eeeeee;
+        .current-group {
+            margin-top: 35px;
+            &__name {
+                font-size: $chat-group_name;
+                color: #333333;
+            }
+            &__members {
+                display: flex;
+                margin-top: 15px;
+                font-size: 12px;
+                color: #999999;
+                .member {
+                    margin-left: 5px
+                }
+            }
+        }
+        .edit {
+            margin-top:28px;
+            height: 40px;
+            &__button {
+                display: block;
+                height: 100%;
+                width: 100%;
+                line-height: 40px;
+                border: solid 1px $blue;
+                a {
+                    display: block;
+                    text-decoration: none;
+                    color: $blue;
+                    height: 100%;
+                    padding: 0 20px;
+                }
+            }
+        }
+    }
+    .messages {
+        background-color: $message-white;
+        height: calc(100vh - 190px);
+        padding: 46px 40px;
+        background-color: #fafafa;
+        overflow: scroll;
+        .message {
+            padding-bottom: 40px;
+            .upper-info {
+                display: flex;
+                margin-bottom: 10px;
+                &__user-name {
+                    font-size: $chat-user_name;
+                    font-weight: bold;
+                    color: #434A54;
+                    padding-right: 10px;
+                }
+                &__data {
+                    font-size: $chat-data;
+                    color: #999999;
+                }
+            }
+            .message-text {
+                font-size: $chat-text;
+                color: #434A54;
+            }
+        }
+    }
+    .form {
+        height: 90px;
+        padding: 20px 40px;
+        background-color: #ddd;
+        .new-message {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            .hidden-data {
+            }
+            .input-box {
+                position: relative;
+                display: flex;
+                width: 100%;
+                height: 100%;
+                .font-awesome {
+                    font-family: FontAwesome;
+                    height: 50px;
+                    width: 100%;
+                    padding: 0 40px 0 10px;
+                    color: #434a54;
+                    border-style: none;
+                }
+
+                .image-label {
+                    position: absolute;
+                    font-size: 1.3rem;
+                    top: 10px;
+                    right: 10px;
+                    .fa-image {
+                        cursor: pointer;
+                    }
+                    &__input {
+                        display: none;
+                    }
+                }
+            }
+            .submit-btn {
+                //position: absolute;
+                width: 100px;
+                height: 50px;
+                padding: 0 30px;
+                margin-left: 15px;
+                background-color: $blue;
+                color: white;
+                cursor: pointer;
+            }
+        }
+    }
+}
