@@ -1,0 +1,19 @@
+.side-bar
+  .side-header
+    %p.side-header__user-name ユーザー名
+    %ul.side-header__menus
+      %li.menu
+        .edit
+          = link_to "/groups/new" do
+            %i.fa.fa-edit
+      %li.menu
+        .cog
+          = link_to "/users/#user.id/edit" do
+            %i.fa.fa-cog
+  .groups
+    - count = 1
+    - while count < 4
+      .group
+        .group__group-name テスト#{count}
+        .group__latest-message おはよう#{count}
+        - count += 1
