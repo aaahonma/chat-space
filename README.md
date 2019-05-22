@@ -27,8 +27,8 @@ Things you may want to cover:
 |------|----|-------|
 |nickname|string|index: true, null: false|
 |email|string|null: false, unique: true|
-|icon_image|text|null: true|
-|introduction|text|null: true|
+|icon_image|text||
+|introduction|text||
 
 ### Association
 - has_many :groups, through: members
@@ -59,7 +59,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |message|text||
-|image|string|null: true|
+|image|string||
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
