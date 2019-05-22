@@ -17,7 +17,7 @@
             メンバー3
       .edit
         .edit__button
-          = link_to('Edit', "/groups/group.id/edit")
+          = link_to('Edit', " edit_group_path")
     .messages
       - num = 1
       - while num < 5
@@ -28,7 +28,7 @@
           .message-text こんにちは#{num}
           - num += 1
     .form
-      %form.new-message(accept-charset="UTF-8" action="/groups/group.id/messages" enctype="multipart/form-data" method=  "post")
+      %form.new-message(accept-charset="UTF-8" action="group_messages" enctype="multipart/form-data" method=  "post")
         %input.hidden-data(name="utf8" type="hidden" value="")
         .input-box
           %input.font-awesome(type="text" placeholder="type a message")
@@ -36,3 +36,4 @@
             %i.fa.fa-image
             %input.image-label__input(name="message[image]" id="upload-icon" type="file")
         %input.submit-btn(type="submit" value="Send")
+
