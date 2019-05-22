@@ -27,7 +27,7 @@ Things you may want to cover:
 |------|----|-------|
 |nickname|string|index: true, null: false|
 |email|string|null: false, unique: true|
-|icon_image|text||
+|icon_image|string||
 |introduction|text||
 
 ### Association
