@@ -41,7 +41,6 @@ group :development, :test do
   gem 'devise'
   gem 'pry-rails', '~> 0.3.4'  # rails console(もしくは、rails c)でirbの代わりにpryを使われる
   gem 'pry-doc', '~> 0.8.0'    # methodを表示
-  gem 'pry-byebug', '~> 3.3.0' # デバッグを実施(Ruby 2.0以降で動作する)
   gem 'pry-stack_explorer', '~> 0.4.9.2' # スタックをたどれる
 end
 
