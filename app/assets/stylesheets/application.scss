@@ -1,7 +1,17 @@
-@import "./reset";
-@import "./sideBar-contents";
-@import "./chat-contents";
-@import "./variable";
+@import "reset";
+@import "variable";
+@import "sideBar-contents";
+@import "chat-contents";
+@import "user";
+@import "flash";
+@import "group";
 @import "font-awesome";
-@import "modules/user";
 
+// @import "./stylesheets/config/_reset";
+// @import "./stylesheets/config/_variable";
+// @import "./modules/sideBar-contents";
+// @import "./modules/chat-contents";
+// @import "./modules/user";
+// @import "./modules/flash";
+// @import "./modules/group";
+// @import "./font-awesome";
