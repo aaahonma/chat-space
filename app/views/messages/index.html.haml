@@ -1,7 +1,5 @@
 .wrapper
-  .flash-box
-    .notice グループを編集しました
-  = render 'side_bar'
+  = render 'shared/side_bar'
   .chat
     .header
       .current-group
@@ -17,7 +15,7 @@
             メンバー3
       .edit
         .edit__button
-          = link_to('Edit', " edit_group_path")
+          = link_to('Edit', "edit_group_path")
     .messages
       - num = 1
       - while num < 5
@@ -36,4 +34,3 @@
             %i.fa.fa-image
             %input.image-label__input(name="message[image]" id="upload-icon" type="file")
         %input.submit-btn(type="submit" value="Send")
-

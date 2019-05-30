@@ -41,7 +41,6 @@ group :development, :test do
   gem 'devise'
   gem 'pry-rails', '~> 0.3.4'  # rails console(もしくは、rails c)でirbの代わりにpryを使われる
   gem 'pry-doc', '~> 0.8.0'    # methodを表示
-  gem 'pry-byebug', '~> 3.3.0' # デバッグを実施(Ruby 2.0以降で動作する)
   gem 'pry-stack_explorer', '~> 0.4.9.2' # スタックをたどれる
 end
 
@@ -52,6 +51,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'better_errors' #エラー検出を容易にする
+  gem 'binding_of_caller'  #エラー検出を容易にする
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

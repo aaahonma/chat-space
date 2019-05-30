@@ -1,0 +1,19 @@
+@import "./variable";
+
+.flash-box {
+    top: 0px;
+    font-size: 1rem;
+    font-weight: lighter;
+    text-align: center;
+    width: 100vw;
+    .notice {
+        background: $blue;
+        color: white;
+        text-align: center;
+    }
+    .alert {
+        background: $alert_orange;
+        color: white;
+        text-align: center;
+    }
+}
