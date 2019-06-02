@@ -66,3 +66,7 @@ gem 'erb2haml'
 
 #アイコンの導入
 gem 'font-awesome-rails'
+
+# メッセージ送信機能
+gem 'carrierwave'
+gem 'mini_magick'

@@ -57,7 +57,7 @@ div {
         overflow: scroll;
         .message {
             padding-bottom: 40px;
-            .upper-info {
+            .upper-message {
                 display: flex;
                 margin-bottom: 10px;
                 &__user-name {
@@ -71,9 +71,11 @@ div {
                     color: #999999;
                 }
             }
-            .message-text {
-                font-size: $chat-text;
-                color: #434A54;
+            .lower-message {
+                &__content {
+                    font-size: $chat-text;
+                    color: #434A54;
+                }
             }
         }
     }
@@ -81,41 +83,40 @@ div {
         height: 90px;
         padding: 20px 40px;
         background-color: #ddd;
-        .new-message {
+        .new_message {
             display: flex;
-            width: 100%;
-            height: 100%;
-            .hidden-data {
+            .hidden {
             }
-            .input-box {
+            .form__mask{
                 position: relative;
-                display: flex;
                 width: 100%;
-                height: 100%;
-                .font-awesome {
-                    font-family: FontAwesome;
+                .form__message {
                     height: 50px;
                     width: 100%;
                     padding: 0 40px 0 10px;
+                    box-sizing: border-box;
                     color: #434a54;
                     border-style: none;
                 }
-
-                .image-label {
+                .form__mask__image{
                     position: absolute;
-                    font-size: 1.3rem;
-                    top: 10px;
+                    top: 13px;
                     right: 10px;
-                    .fa-image {
+                    height: 25px;
+                    width: 30px;
+                    .icon {
+                        font: normal normal normal 25px FontAwesome;
+                        border-style: none;
+                        height: 100%;
+                        width: 100%;
                         cursor: pointer;
                     }
-                    &__input {
+                    .hidden {
                         display: none;
                     }
                 }
             }
-            .submit-btn {
-                //position: absolute;
+            .form__submit {
                 width: 100px;
                 height: 50px;
                 padding: 0 30px;

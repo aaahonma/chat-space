@@ -1,0 +1,13 @@
+.message
+    .upper-message
+        .upper-message__user-name
+            = message.user.name
+        .upper-message__data
+            = message.created_at.strftime("%Y/%m/%d %H:%M")
+    .lower-message
+        -# contentはカラム名、present?は、空でなければ
+        - if message.content.present?
+            %p.lower-message__content
+                = message.content
+        -# 後置ifにてimageカラムが空でなければイメージタグを生成
+        = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
