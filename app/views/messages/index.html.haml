@@ -7,30 +7,32 @@
           グループ名
         %ul.current-group__members
           Member :
-          %li.member
-            メンバー1
-          %li.member
-            メンバー2
-          %li.member
-            メンバー3
+          = render 'member', group_user: @group.group_users
       .edit
         .edit__button
           = link_to('Edit', "edit_group_path")
     .messages
-      - num = 1
-      - while num < 5
-        .message
-          .upper-info
-            %p.upper-info__user-name メンバー#{num}
-            %h3.upper-info__data YYYY/MM/DD(aaa)
-          .message-text こんにちは#{num}
-          - num += 1
+      -# 下記のコードは、= render partial: 'message', collection: @messagesと同義
+      -# 引数でグループに保存されているメッセージ全てを取得している@messages
+      -# 部分テンプレートへ渡される引数が配列の場合、配列の個数分部分テンプレートを繰り返す。eachで取り出すよりもrender処理の方が早い
+      = render @messages
     .form
-      %form.new-message(accept-charset="UTF-8" action="group_messages" enctype="multipart/form-data" method=  "post")
-        %input.hidden-data(name="utf8" type="hidden" value="")
-        .input-box
-          %input.font-awesome(type="text" placeholder="type a message")
-          %label.image-label(for="upload-icon")
-            %i.fa.fa-image
-            %input.image-label__input(name="message[image]" id="upload-icon" type="file")
-        %input.submit-btn(type="submit" value="Send")
+      -# routingの設定からgroup_messages_path & POSTメソッドで登録できる環境のため、form_forへは現状グループを示す@group, 新規メッセージ用の@messageを渡す
+      -# ネストされたモデルに対してform_forを使用する場合、親モデルのインスタンス(もしくは親モデルのid)を第1引数、子モデルのインスタンスを第2引数に設定する必要があります
+      = form_for [@group, @message] do |f|
+        .form__mask
+          = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
+        -# form_forの使用に伴い以下をコメントアウト
+        -# %form.new-message(accept-charset="UTF-8" action="group_messages" enctype="multipart/form-data" method=  "post") #form_forの使用に伴いコメントアウト
+        -#   %form.new-message(accept-charset="UTF-8" action="group_messages" enctype="multipart/form-data" method=  "post")
+        -#     %input.hidden-data(name="utf8" type="hidden" value="")
+        -#     .input-box
+        -#       %input.font-awesome(type="text" placeholder="type a message")
+        -#       %label.image-label(for="upload-icon")
+        -#         %i.fa.fa-image
+        -#         %input.image-label__input(name="message[image]" id="upload-icon" type="file")
+        -#     %input.submit-btn(type="submit" value="Send")

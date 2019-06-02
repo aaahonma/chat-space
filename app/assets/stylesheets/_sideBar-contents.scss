@@ -5,35 +5,30 @@
     box-sizing: border-box;
     width: 300px;
     float: left;
-    .side-header {
+    .header {
         background: $sideHeader-blue;
         padding: 0 20px;
         height: 100px;
         display: -webkit-flex;
         display: flex;
         justify-content: space-between;
-        &__user-name {
+        &__name {
             font: $sideBar-user_name bold;
             display: flex;
             line-height: 100px;
         }
-        &__menus {
+        &__lists {
             display: flex;
             line-height: 100px;
-            .menu {
-                .edit {
-                    .fa-edit {
-                        margin: 0.3rem;
-                        color: white;
-                    }
+            .list {
+                .fa-pencil-square-o {
+                    margin: 0.3rem;
+                    color: white;
                 }
-                .cog {
-                    .fa-cog {
-                        margin: 0.3rem;
-                        color: white;
-                    }
+                .fa-cog {
+                    margin: 0.3rem;
+                    color: white;
                 }
-
             }
         }
     }
@@ -45,12 +40,16 @@
         align-content: flex-start;
         .group {
             padding-bottom: 40px;
-            &__group-name {
+            &__name {
                 font-size: $sideBar-group_name;
+                color: white;
+                text-decoration: none;
             }
-            &__latest-message {
+            &__message {
                 padding-top: 5px;
                 font-size: $sideBar-latest-message;
+                color: white;
+                text-decoration: none;
             }
         }
     }
