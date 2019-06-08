@@ -42,6 +42,10 @@ group :development, :test do
   gem 'pry-rails', '~> 0.3.4'  # rails console(もしくは、rails c)でirbの代わりにpryを使われる
   gem 'pry-doc', '~> 0.8.0'    # methodを表示
   gem 'pry-stack_explorer', '~> 0.4.9.2' # スタックをたどれる
+  gem 'rspec-rails'               # テストフレームワークrspec
+  gem 'factory_bot_rails'         # 擬似リソースの生成に使うFactoryBotの導入
+  gem 'rails-controller-testing'  # コントローラーに対するテスト環境を構築
+  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'                     # 複数の擬似リソースを生成してくれる
 end
 
 group :development do
@@ -54,6 +58,10 @@ group :development do
   gem 'better_errors' #エラー検出を容易にする
   gem 'binding_of_caller'  #エラー検出を容易にする
 end
+
+group :test do
+end
+
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
