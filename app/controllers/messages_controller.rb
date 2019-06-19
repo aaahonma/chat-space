@@ -12,7 +12,10 @@ class MessagesController < ApplicationController
   def create
     @message = @group.messages.new(message_params)  # newメソッド?で該当groupのmessages配列に新規メッセージ追加
     if @message.save
-      redirect_to group_messages_path(@group), notice: 'メッセージが送信されました'
+      respond_to do |message|
+        message.html { redirect_to group_messages_path(@group), notice: 'メッセージが送信されました' }
+        message.json
+      end
     else
       # create失敗、再度投稿
       @messages = @group.messages.includes(:user)  # 新規メッセージを追加したい大元の既存メッセージ群を取得
@@ -33,3 +36,17 @@ class MessagesController < ApplicationController
     # groupコントローラの時と異なりfind(params[:group_id])でgroup番号を取得
   end
 end
+
+
+
+# def create
+#   @message = @group.messages.new(message_params)  # newメソッド?で該当groupのmessages配列に新規メッセージ追加
+#   if @message.save
+#     redirect_to group_messages_path(@group), notice: 'メッセージが送信されました'
+#   else
+#     # create失敗、再度投稿
+#     @messages = @group.messages.includes(:user)  # 新規メッセージを追加したい大元の既存メッセージ群を取得
+#     flash.now[:alert] = 'メッセージを入力してください' # flash.now= 現在のリクエスト画面にのみ表示可能なメッセージ
+#     render :index
+#   end
+# end

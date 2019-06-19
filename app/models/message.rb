@@ -5,4 +5,7 @@ class Message < ApplicationRecord
     validates :content, presence: true, unless: :image?
     # presence: true=空白NG
     # imageカラムに値があった場合
+
+    # 画像アップロードに必要な記述
+    mount_uploader :image, ImageUploader
 end

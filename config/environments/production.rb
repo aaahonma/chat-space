@@ -1,4 +1,6 @@
 Rails.application.configure do
+  # config.assets.js_compressor = :uglifier
+  # 上記の記述はchat-spaceでテンプレートリテラル記法を使う際に必要な記述
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.

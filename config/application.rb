@@ -8,6 +8,8 @@ Bundler.require(*Rails.groups)
 
 module ChatSpace
   class Application < Rails::Application
+    # submitボタンを2回目以降も押せるようにする記述
+    config.action_view.automatically_disable_submit_tag = false # data-disable-withを無効にする
     config.generators do |g|
       g.stylesheets false
       g.javascripts false

@@ -10,4 +10,4 @@
             %p.lower-message__content
                 = message.content
         -# 後置ifにてimageカラムが空でなければイメージタグを生成
-        = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+        = image_tag message.image, class: 'lower-message__image' if message.image.present?
