@@ -6,11 +6,9 @@ $(function() {
     //buildHTML関数を定義
     function buildHTML(message) {
 
-        var img = ""
-        //画像が投稿されなかった際を考慮する
-        if (message.image !== null) {
-            img = `<img class="lower-message__image" src="${ message.image }">`
-        }
+        //三項演算子の応用(変数 = 条件式 ? true : false)
+        var img = (message.image !== null) ? `<img class="lower-message__image" src="${ message.image }">` : "" ;
+
         var html = `<div class="message">
                         <div class="upper-message">
                             <div class="upper-message__user-name">
@@ -43,9 +41,6 @@ $(function() {
         //attr= 要素が持つ指定属性の値を返す　　実際の返り値= action="/groups/1/messages"
         //指定した属性がなければundefinedが返ってくる
 
-        var textField = $("#message_content");       //入力フォーム
-        var imageField = $("#message_image");        //画像格納ブロック
-
         //①-2, Ajaxをするために必要な情報の準備をする
         $.ajax({
             url: url,           //リクエストを送信する先のurl(/groups/1/messages)
@@ -68,8 +63,7 @@ $(function() {
         .done(function(message) {
             var html = buildHTML(message);
             $('.messages').append(html);
-            textField.val('');      //入力テキストをリセット
-            imageField.val('');     //画像フォルダをリセット
+            $("#new_message")[0].reset();      //入力テキスト,画像データをリセット(送信データ関係をリセットできる)
 
         })
         //失敗したとき
