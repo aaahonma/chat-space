@@ -81,9 +81,12 @@ $(function() {
 
         //ページ最下部へスクロールする
         var speed = 500;
-        var element = document.getElementById( "messages" );    //各メッセージの親要素「messages」のnodeを取得
-        var lastElement = element.lastElementChild;             //lastElementChild= 子要素の最後の要素を取得
-        var position = $(lastElement).offset().top;
-        $(".messages").animate({scrollTop:position}, speed, 'swing');
+
+        // var element = document.getElementById( "messages" );    //各メッセージの親要素「messages」のnodeを取得
+        // var lastElement = element.lastElementChild;             //lastElementChild= 子要素の最後の要素を取得
+        // var position = $(element).outerHeight();
+        // var pos = $(".messages").height();
+        // console.log(pos);
+        $(".messages").animate({ scrollTop:$(".messages").height() }, speed, 'swing');
     });
 });
