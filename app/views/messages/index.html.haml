@@ -11,7 +11,7 @@
       .edit
         .edit__button
           = link_to('Edit', "edit_group_path")
-    .messages
+    .messages#messages
       -# 下記のコードは、= render partial: 'message', collection: @messagesと同義
       -# 引数でグループに保存されているメッセージ全てを取得している@messages
       -# 部分テンプレートへ渡される引数が配列の場合、配列の個数分部分テンプレートを繰り返す。eachで取り出すよりもrender処理の方が早い
