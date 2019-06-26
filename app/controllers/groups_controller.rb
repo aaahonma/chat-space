@@ -34,7 +34,7 @@ class GroupsController < ApplicationController
     private
 
     def group_params
-        params.require(:group).permit(:name, {:user_ids => [] })
+        params.require(:group).permit(:name, { user_ids: [] })
         #require=渡されるparamsのオブジェクトを絞る(user,action,controllerなど)
         #permit=オブジェクト別に渡される値をさらに絞る
         #:user_idはgroupに所属するメンバー一覧配列

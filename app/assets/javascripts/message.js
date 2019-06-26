@@ -12,7 +12,7 @@ $(function() {
         var html = `<div class="message">
                         <div class="upper-message">
                             <div class="upper-message__user-name">
-                            ${ message.user_name }
+                            ${ message.user_nickname }
                             </div>
                             <div class="upper-message__data">
                             ${ message.created_at }
