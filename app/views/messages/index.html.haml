@@ -4,13 +4,16 @@
     .header
       .current-group
         %h2.current-group__name
-          グループ名
+          = @group.name
         %ul.current-group__members
           Member :
-          = render 'member', group_user: @group.group_users
+          = render partial: 'member', collection: @group.group_users
+        -#   部分テンプレート内ではpartial:で指定した文字列(ファイル名)の変数名でcollectionの各要素へアクセスしている
+        -#   部分テンプレートではmemberで各要素を参照できる
       .edit
         .edit__button
-          = link_to('Edit', "edit_group_path")
+          = link_to edit_group_path(@group) do
+            Edit
     .messages#messages
       -# 下記のコードは、= render partial: 'message', collection: @messagesと同義
       -# 引数でグループに保存されているメッセージ全てを取得している@messages

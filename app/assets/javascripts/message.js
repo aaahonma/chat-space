@@ -9,10 +9,10 @@ $(function() {
         //三項演算子の応用(変数 = 条件式 ? true : false)
         var img = (message.image !== null) ? `<img class="lower-message__image" src="${ message.image }">` : "" ;
 
-        var html = `<div class="message">
+        var html = `<div class="message" data-id="${ message.id }" data-created_at="${ message.created_at }">
                         <div class="upper-message">
                             <div class="upper-message__user-name">
-                            ${ message.user_name }
+                            ${ message.user_nickname }
                             </div>
                             <div class="upper-message__data">
                             ${ message.created_at }
