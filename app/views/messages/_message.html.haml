@@ -1,4 +1,5 @@
-.message{data: {id: message.id, created_at: message.created_at}}
+.message{data: {id: message.id, created_at: message.created_at, group_id: @group.id}}
+    -# カスタム属性の指定方法。data-idとdata-created-at属性の作成= {data: {id: message.id, created_at: message.created_at}}
     .upper-message
         .upper-message__user-name
             = message.user.nickname
