@@ -109,7 +109,7 @@ $(function() {
                 url: ajax_url,                        //ルーティングで設定した通りのURLを指定
                 type: 'get',                    //ルーティングで設定したhttpメソッド
                 dataType: 'json',
-                // timeout : 30000,                //サーバーからの返信が30秒経ってもないときはタイムアウト設定
+                timeout : 30000,                //サーバーからの返信が30秒経ってもないときはタイムアウト設定
                 data: {id: last_message_id}     //dataオプションでリクエストに値を含める
             })
             .done(function(messages) {
