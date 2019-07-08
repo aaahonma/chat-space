@@ -45,7 +45,12 @@ group :development, :test do
   gem 'rspec-rails'               # テストフレームワークrspec
   gem 'factory_bot_rails'         # 擬似リソースの生成に使うFactoryBotの導入
   gem 'rails-controller-testing'  # コントローラーに対するテスト環境を構築
-  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'                     # 複数の擬似リソースを生成してくれる
+  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'      # 複数の擬似リソースを生成してくれる
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
 end
 
 group :development do
