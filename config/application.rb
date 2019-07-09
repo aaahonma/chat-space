@@ -1,7 +1,7 @@
 require_relative 'boot'
 
-require 'devise'    # Bundler.requireよりも上にこの記述を入れてuninitialized constant Devise (NameError)を回避
 require 'rails/all'
+require 'devise'    # Bundler.requireよりも上にこの記述を入れてuninitialized constant Devise (NameError)を回避
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
