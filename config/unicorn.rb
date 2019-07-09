@@ -9,7 +9,7 @@ worker_processes 1
 
 #アプリケーションの設置されているディレクトリを指定
 # working_directory= UnicornがRailsのコードを動かす際、ルーティングなど実際に参照するファイルを探すディレクトリを指定します。
-working_directory "#{app_path}/current  "
+working_directory "#{app_path}/current"
 
 # 自動デプロイではそれぞれ、sharedの中を参照するよう変更する
 
