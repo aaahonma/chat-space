@@ -65,11 +65,13 @@ group :development do
 end
 
 group :test do
+  gem 'devise'
 end
 
 # :productionは本番環境のみで起動する
 group :production do
   gem 'unicorn', '5.4.1'
+  gem 'devise'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -87,3 +89,4 @@ gem 'font-awesome-rails'
 # メッセージ送信機能
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'devise'
