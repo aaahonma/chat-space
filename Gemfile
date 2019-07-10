@@ -89,4 +89,5 @@ gem 'font-awesome-rails'
 # メッセージ送信機能
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'fog-aws'   #外部のストレージを選択しアップロードするのを補助してくれるGem
 gem 'devise'
