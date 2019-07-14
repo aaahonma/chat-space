@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
   before_action :set_group # 全てのアクション内で@group変数を使えるようにする
 
   def index
-    @message = Message.new
+    @message = Message.new  # form_forで新規投稿フォームを作成するために必要
     @messages = @group.messages.includes(:user)
     # @messageは入力フォームやメッセージ一覧部分に渡す引数
     # @messagesはグループに所属する全てのメッセージ
@@ -10,11 +10,11 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = @group.messages.new(message_params)  # newメソッド?で該当groupのmessages配列に新規メッセージ追加
+    @message = @group.messages.new(message_params)  # newメソッド?で該当groupのmessages配列に新規メッセージ追加→newアクションが定義されていないため、合わせて下段のsaveが実行できるか確認するためにnewアクションにとどめている
     if @message.save
-      respond_to do |message|
-        message.html { redirect_to group_messages_path(@group), notice: 'メッセージが送信されました' }
-        message.json
+      respond_to do |format|
+        format.html { redirect_to group_messages_path(@group), notice: 'メッセージが送信されました' }
+        format.json
       end
     else
       # create失敗、再度投稿

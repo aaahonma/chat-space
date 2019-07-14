@@ -11,6 +11,13 @@ module ChatSpace
   class Application < Rails::Application
     # submitボタンを2回目以降も押せるようにする記述
     config.action_view.automatically_disable_submit_tag = false # data-disable-withを無効にする
+
+    # 表示をUST→JSTに変更する
+    config.time_zone = 'Tokyo'
+    # DBの保存時間を変更する
+    config.active_record.default_timezone = :local
+    config.active_record.time_zone_aware_attributes = :false
+
     config.generators do |g|
       g.stylesheets false
       g.javascripts false

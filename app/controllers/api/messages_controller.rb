@@ -5,11 +5,11 @@ class Api::MessagesController < ApplicationController
     before_action :set_group # 全てのアクション内で@group変数を使えるようにする
 
     def index
-        @messages = @group.messages.all
+        @messages = @group.messages.all.includes(:user)
 
-        respond_to do |users|
+        respond_to do |format|
             # users.html　# html形式でアクセスがあった場合は特に何もなし(@messagesして終わり）
-            users.json {@new_messages = @group.messages.includes(:user).where('id > ?', params[:id] )}
+            format.json {@new_messages = @group.messages.includes(:user).where('id > ?', params[:id] )}
             # 必ずjson形式のデータを受け取ってからテーブルから検索をかける必要がある。respond_to外に記述するとparamsが送られて来なくエラーが起こる,paramsが送られてくるタイミングはreloadMessages関数を実行したとき。
             # json形式でアクセスがあった場合は、params[:id]よりも大きいidがないかMessageから検索して、@new_messageに代入する
             # @grooup= 現在所属しているグループ、messages= 該当グループの保有しているメッセージ一覧に対してwhereを使う

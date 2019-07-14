@@ -1,5 +1,5 @@
 // ファイル名はコントローラ名.js
-$(function() {
+$(document).on("turbolinks:load", function() {
     //htmlタグ配下の要素を全部読み込む
 
     //⑤構築したHTMLをViewに差し込む
