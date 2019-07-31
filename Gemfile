@@ -39,8 +39,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'devise'
-  gem 'pry-rails', '~> 0.3.4'  # rails console(もしくは、rails c)でirbの代わりにpryを使われる
-  gem 'pry-doc', '~> 0.8.0'    # methodを表示
+
   gem 'pry-stack_explorer', '~> 0.4.9.2' # スタックをたどれる
   gem 'rspec-rails'               # テストフレームワークrspec
   gem 'factory_bot_rails'         # 擬似リソースの生成に使うFactoryBotの導入
@@ -91,3 +90,5 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'   #外部のストレージを選択しアップロードするのを補助してくれるGem
 gem 'devise'
+gem 'pry-rails', '~> 0.3.4'  # rails console(もしくは、rails c)でirbの代わりにpryを使われる
+gem 'pry-doc', '~> 0.8.0'    # methodを表示

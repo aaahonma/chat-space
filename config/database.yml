@@ -53,6 +53,7 @@ production:
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
+  # 本番環境下でのDBとの
   # 上記に編集
   # username: chat-space
   # password: <%= ENV['CHAT-SPACE_DATABASE_PASSWORD'] %>
